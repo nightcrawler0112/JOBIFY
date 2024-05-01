@@ -3,19 +3,39 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import HomeLayout from "./pages/HomeLayout";
+import {
+  Register,
+  Login,
+  Error,
+  DashboardLayout,
+  Landing,
+  HomeLayout,
+} from "./pages";
+import { Children } from "react";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
-  },
-  {
-    path: "/about",
-    element: (
-      <div>
-        <h1>About page</h1>
-      </div>
-    ),
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path: "dashboardLayout",
+        element: <DashboardLayout />,
+      },
+
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+    ],
   },
 ]);
 
