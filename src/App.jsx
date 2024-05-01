@@ -1,5 +1,26 @@
+import {
+  BrowserRouter,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+import HomeLayout from "./pages/HomeLayout";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomeLayout />,
+  },
+  {
+    path: "/about",
+    element: (
+      <div>
+        <h1>About page</h1>
+      </div>
+    ),
+  },
+]);
+
 const App = () => {
-   return <h1> Jobify App </h1>;
+  return <RouterProvider router={router} />;
 };
 
 export default App;
