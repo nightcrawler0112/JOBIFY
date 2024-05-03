@@ -17,6 +17,16 @@ import {
   Admin,
 } from "./pages";
 import { Children } from "react";
+
+
+export const checkDeafultTheme = () => {
+  const isDarkTheme = localStorage.getItem("dark-theme")=== "true";
+  document.body.classList.toggle('dark-theme', isDarkTheme);
+  return isDarkTheme;
+};
+
+const isDarkThemeEnabled = checkDeafultTheme();
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "dashboard",
-        element: <DashboardLayout />,
+        element: <DashboardLayout  />,
         children: [
           {
             index: true,
