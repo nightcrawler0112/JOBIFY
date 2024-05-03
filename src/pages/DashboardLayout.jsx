@@ -6,7 +6,7 @@ import React, { createContext, useContext, useState } from "react";
 const DashboardContext = createContext();
 
 const DashboardLayout = () => {
-  const user = { name: "john" };
+  const user = { name: "Navin" };
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const toggleDarkTheme = () => {
@@ -15,7 +15,7 @@ const DashboardLayout = () => {
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
-  const logoutUser = async () => {
+  const logoutUser = async  () => {
     console.log("logout user");
   };
   return (
